@@ -1,0 +1,16 @@
+name: pii-redaction-agent
+description: Enterprise PII redaction guardrail hosted in Microsoft Foundry.
+version: 0.1.0
+runtime:
+  language: python
+  entrypoint: agents/pii_redaction/main.py
+protocols:
+  - invocations
+resources:
+  cpu: 0.5
+  memory: 1Gi
+environment:
+  required:
+    - AZURE_AI_LANGUAGE_ENDPOINT
+  optional:
+    - APPLICATIONINSIGHTS_CONNECTION_STRING
